@@ -22,6 +22,7 @@ for year in years:
                         "Title": english_title,
                         "Type": anime.get("type", "Unknown"),
                         "Score": anime.get("score", "N/A"),
+                        "Episodes": anime.get("episodes","N/A"),
                         "Popularity": anime.get("popularity", "N/A"),
                         "Members": anime.get("members", "N/A"),
                         "Genres": ", ".join([genre['name'] for genre in anime.get("genres", [])]),
