@@ -16,9 +16,11 @@ for year in years:
             if response.status_code == 200:
                 data = response.json()
                 for anime in data.get("data", []):
+                    english_title = anime.get("title_english") or anime.get("title")
                     anime_list.append({
                         "Anime ID": anime.get("mal_id"),
-                        "Title": anime.get("title", "Unknown"),
+                        "Title": english_title,
+                        "Type": anime.get("type", "Unknown"),
                         "Score": anime.get("score", "N/A"),
                         "Popularity": anime.get("popularity", "N/A"),
                         "Members": anime.get("members", "N/A"),
